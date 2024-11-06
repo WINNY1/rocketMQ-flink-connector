@@ -26,9 +26,9 @@ import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
 public class RocketMQSourceExample {
-    private static String topic = "tp_test";
+    private static String topic = "test_flink_rmq";
     private static String consumerGroup = "cg_test";
-    private static String nameServerAddress = "10.13.66.140:9876";
+    private static String nameServerAddress = "192.168.111.117:9876";
 
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();

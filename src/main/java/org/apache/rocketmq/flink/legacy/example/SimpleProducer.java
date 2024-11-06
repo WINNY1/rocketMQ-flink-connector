@@ -37,9 +37,9 @@ public class SimpleProducer {
 
     // Producer config
     private static final String NAME_SERVER_ADDR =
-            "http://${instanceId}.${region}.mq-internal.aliyuncs.com:8080";
+            "192.168.111.117:9876";
     private static final String PRODUCER_GROUP = "GID_SIMPLE_PRODUCER";
-    private static final String TOPIC = "SOURCE_TOPIC";
+    private static final String TOPIC = "test_flink_rmq";
     private static final String TAGS = "*";
     private static final String KEY_PREFIX = "KEY";
 
@@ -51,7 +51,7 @@ public class SimpleProducer {
 
     public static void main(String[] args) {
         DefaultMQProducer producer =
-                new DefaultMQProducer(PRODUCER_GROUP, getAclRPCHook(), true, null);
+                new DefaultMQProducer(PRODUCER_GROUP, null, true, null);
         producer.setNamesrvAddr(NAME_SERVER_ADDR);
 
         // When using aliyun products, you need to set up channels
